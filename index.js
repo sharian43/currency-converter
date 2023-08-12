@@ -25,7 +25,7 @@ async function getExchangeRate() {
     const amountVal = amount.value || 1;
     exRateTxt.innerText = "Getting exchange rate...";
     try {
-        const response = await fetch(`https://v6.exchangerate-api.com/v6/c677a42e0fce9509fe02cec5/latest/${fromCur.value}`);
+        const response = await fetch(`https://v6.exchangerate-api.com/v6/[Your Key]/latest/${fromCur.value}`);
         const result = await response.json();
         const exchangeRate = result.conversion_rates[toCur.value];
         const totalExRate = (amountVal * exchangeRate).toFixed(2);
